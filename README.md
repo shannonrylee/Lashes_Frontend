@@ -1,1 +1,0 @@
-# Lashes_Frontend
