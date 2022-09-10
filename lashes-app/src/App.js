@@ -1,14 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-import react from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Home from './components/Home'
-import ProductCard from './components/ProductCard'
-import CheckOut from './components/Customer'
+import Register from './pages/Register'
+import Product from './pages/Product'
 import HowTo from './components/HowTo'
+import Customer from './components/Customer'
 
-function App() {
+const App = () => {
+
   return (
     <div className="App">
       <header>
@@ -17,9 +18,10 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/productcard" element={<ProductCard/> } />
+          <Route path="/products" element={<Product/> } />
           <Route path="/howto" element={<HowTo/> } />
-          <Route path="/checkout" element={<CheckOut/>} /> */}
+          <Route path="/checkout" element={<Customer/>} /> 
+          <Route path="/register" elemnet={<Register/>} />
         </Routes>
       </main>
     </div>
