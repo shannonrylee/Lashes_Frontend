@@ -36,17 +36,371 @@
     transform: rotate(360deg);
   }
 }
-.card{
-  max-height: 50%;
-  max-width: 50%;
-  margin-left: 10%;
-  margin-right: 10%;
+
+html {
+    color: #333;
+    font-family: 'Kanit', sans-serif;
 }
-.top{
-  max-width: 70%;
-  max-height: 70%;
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between flex-end;
+    flex-direction: row;
+    margin-left: auto;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.logo > svg {
+    display: block;
+    width: 100%;
+}
+
+nav > ul {
+    display: flex;
+    font-size: 1rem;
+    height: 70px;
+    list-style: none;
+    text-transform: capitalize;
+}
+
+nav > ul > li {
+    line-height: 70px;
+    padding: 0 30px;
+    transition: background-color .3s ease-in-out;
+}
+
+nav > ul > li:hover {
+    background-color: rgba(0,0,0,.1);
+}
+
+.nav-right > ul > li {
+    border-right: 1px solid rgba(0,0,0,.1)
+}
+
+.nav-right > ul > li:nth-child(1) {
+    border-left: 1px solid rgba(0,0,0,.1);
+}
+
+.nav-right > ul > li:last-child {
+    border-right: none;
+}
+
+main {
+    display: flex;
+    height: calc(100vh - 70px);
+    justify-content: center;
+}
+
+.left {
+    background-color: #f7f7f6;
+    flex: 1;
+    height: 100%;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.product-info > h1 {
+    font-size: 3.2rem;
+    letter-spacing: 3px;
+    margin-right: -3px;
+    font-weight: 100;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.product-info > p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.product-info > h2 {
+    font-size: 1.56rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    color: #f7f7f6;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 900;
+    padding: 20px;
+    text-transform: uppercase;
+    transition: box-shadow .5s ease-in-out,
+                transform .5s ease-in-out;
+}
+
+.btn:hover {
+    box-shadow: 3px 10px 20px rgba(0,0,0,.3);
+    transform: translateY(-5px);
+}
+
+.info-btns {
+    display: flex;
+}
+
+.discover-btn {
+    background-color: #a4a4a4;
+}
+
+.cart-btn {
+    background-color:rgb(103, 103, 103);
+}
+
+.right {
+    background-color: rgb(232, 158, 169);
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+.right > img {
+    position: absolute;
+    /* max-height: 100%; */
+    left: -150px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .logo > svg {
+      height: 60px;
+      width: 60px;
+    }
+  
+    .logo {
+      padding-left: 15px;
+    }
+    nav > ul {
+      height: 60px;
+      font-size: 1rem;
+    }
+
+    nav > ul > li {
+      line-height: 60px;
+      padding: 0 20px;
+    }
+    .product-info > h1 {
+        font-size: 2.2rem;
+    }
+
+    .product-info > p {
+        font-size: 1rem;
+    }
+
+    .product-info > h2 {
+        font-size: 1.25rem;
+    }
+
+    .btn {
+        font-size: .7rem;
+        padding: 15px;
+    }
+    .right > img {
+      left: -80px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+  .logo > svg {
+    height: 50px;
+    width: 50px;
+  }
+  
+  .logo {
+    padding-left: 15px;
+  }
+  
+  nav > ul {
+    height: 50px;
+    font-size: .9rem;
+  }
+  
+  nav > ul > li {
+    line-height: 50px;
+    padding: 0 15px;
+  }
+  
+  .right > img {
+    left: -60px;
+  }
+}
+.container {
   margin: auto;
-  padding-top: 10%;
-  border-width: 5rem;
-  border-style: round;
+  width: 650px;
+  height: 550px;
+  position: relative;
+}
+
+.welcome {
+  background: rgb(187, 186, 186);
+  width: 650px;
+  height: 415px;
+  position: absolute;
+  top: 25%;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px white;
+}
+
+.box {
+  position: absolute;
+  top: -10%;
+  left: 5%;
+  background: grey;
+  width: 320px;
+  height: 500px;
+  border-radius: 5px;
+  box-shadow: 2px 0 10px black;
+  transition: all .5s ease-in-out;
+  z-index: 2;
+}
+
+.nodisplay {
+  display:none;
+  transition: all .5s ease;
+}
+
+.leftbox, .rightbox {
+  position: absolute;
+  width: 50%;
+  transition: 1s all ease;
+}
+
+.leftbox {
+  left: -2%;
+}
+.rightbox {
+  right: -2%;
+}
+h1 {
+  font-family: sans-serif;
+  text-align: center;
+  margin-top: 95px;
+  text-transform: uppercase;
+  color: grey;
+  font-size: 2em;
+  letter-spacing: 8px;
+}
+
+.title {
+  font-family: serif;
+  color: white;
+  font-size: 1.8em;
+  line-height: 1.1em;
+  letter-spacing: 3px;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 20%;
+}
+.desc {
+  margin-top: -8px;
+}
+.account {
+  margin-top: 45%;
+  font-size: 10px;
+}
+p {
+  font-family: sans-serif;
+  font-size: .7em;
+  letter-spacing: 2px;
+  color: white;
+  text-align: center;
+}
+
+.lashes {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 46%;
+  left: 29%;
+  opacity: .7;
+}
+
+.smaller {
+  width: 90px;
+  height: 100px;
+  top: 48%;
+  left: 38%;
+  opacity: .9;
+}
+
+button {
+  padding: 12px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  border-radius: 10px;
+  margin: auto;
+  outline: none;
+  display: block;
+}
+
+.button {
+  margin-top: 3%;
+  background: white;
+  color: rgb(232, 158, 169);
+  border: solid 1px black;
+}
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 7px;
+}
+.more-padding{
+  padding-top: 35px;
+}
+.submit {
+  margin-top: 25px;
+  padding: 12px;
+  border-color: rgb(232, 158, 169);;
+}
+
+input {
+  background: grey;
+  width: 65%;
+  color: rgb(232, 158, 169);;
+  border: none;
+  border-bottom: 1px solid rgba(white, 0.5);
+  padding: 9px;
+  margin: 7px;
+}
+
+label {
+  font-family: sans-serif;
+  color: rgb(232, 158, 169);;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+
+.checkbox {
+  display: inline;
+  white-space: nowrap;
+  position: relative;
+  left: -62px;
+  top: 5px;
+}
+
+input[type=checkbox] {
+  width: 7px;
+  background: rgb(232, 158, 169);;
+}
+
+.checkbox input[type="checkbox"]:checked + label {
+  color: rgb(232, 158, 169);;
+  transition: .5s all ease;
 }

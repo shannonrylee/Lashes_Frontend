@@ -3,25 +3,25 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Home from './components/Home'
-import Register from './pages/Register'
 import Product from './pages/Product'
 import HowTo from './components/HowTo'
-import Customer from './components/Customer'
+import Signin from './pages/SignIn'
+import Register from './pages/Register'
 
 const App = () => {
 
   return (
     <div className="App">
       <header>
-        <Nav />
+        <Nav/>
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Product/> } />
+          <Route path="/" element={<Home/>} />
+          <Route path="/products" element={ <Product/> } />
           <Route path="/howto" element={<HowTo/> } />
-          <Route path="/checkout" element={<Customer/>} /> 
-          <Route path="/register" elemnet={<Register/>} />
+          <Route path="/signin" element={ <Signin/>} />
+          <Route path="/register" element={<Register/>} />
         </Routes>
       </main>
     </div>
