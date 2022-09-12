@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Home from './components/Home'
 import Product from './pages/Product'
+import ProductDetails from './components/ProductDetails'
 import HowTo from './components/HowTo'
 import Signin from './pages/SignIn'
 import Register from './pages/Register'
@@ -19,6 +20,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/products" element={ <Product/> } />
+          <Route path="/products/:id" element={<ProductDetails/>} />
           <Route path="/howto" element={<HowTo/> } />
           <Route path="/signin" element={ <Signin/>} />
           <Route path="/register" element={<Register/>} />

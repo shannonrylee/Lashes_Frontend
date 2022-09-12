@@ -25,7 +25,7 @@ const Register = () => {
     })
     RegisterUser()
     setFormValues({
-      username: '',
+      name: '',
       emial: '',
       address: '',
       password: '',

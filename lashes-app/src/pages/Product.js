@@ -13,7 +13,8 @@ const ViewProducts = () => {
   }, []);
 
   return (
-    <div>
+    
+<div>
       {product.map((products) => (
         <ProductCard
           image={products.image}

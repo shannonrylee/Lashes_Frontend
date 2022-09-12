@@ -18,12 +18,11 @@ const Nav = () => {
     <nav class="nav-right">
         <ul>
             <li><a href="#"><i class="fas fa-search"></i></a></li>
-            <li><a href="#"><i class="fas fa-user"></i><Link to="/signin">Sign In</Link></a></li>
+            <li><a href="#"><i class="fas fa-user"></i><Link to="/signin">Account</Link></a></li>
             <li><a href="#"><i class="fas fa-shopping-cart"><Link to="/checkout">Cart</Link></i> </a></li>
         </ul>
     </nav>
 </header>
   )
 }
-
 export default Nav
