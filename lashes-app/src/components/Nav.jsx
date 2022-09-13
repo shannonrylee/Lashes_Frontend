@@ -19,7 +19,7 @@ const Nav = () => {
         <ul>
             <li><a href="#"><i class="fas fa-search"></i></a></li>
             <li><a href="#"><i class="fas fa-user"></i><Link to="/signin">Account</Link></a></li>
-            <li><a href="#"><i class="fas fa-shopping-cart"><Link to="/checkout">Cart</Link></i> </a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"><Link to="/checkout">Cart<span>0</span></Link></i> </a></li>
         </ul>
     </nav>
 </header>

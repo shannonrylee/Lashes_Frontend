@@ -4,6 +4,7 @@ import ProductCard from "../components/ProductCard";
 
 const ViewProducts = () => {
   const [product, setProduct] = useState([]);
+  const [productId, setProductId] =useState([])
 
   useEffect(() => {
     axios.get("http://localhost:3001/api/product").then((res) => {
@@ -11,6 +12,7 @@ const ViewProducts = () => {
       setProduct(res.data.products);
     });
   }, []);
+
 
   return (
     

@@ -171,7 +171,8 @@ main {
  img {
     position: relative;
     margin-left: -10rem;
-    top: 50%;
+    top: 55%;
+    max-height: 47rem;
     transform: translateY(-50%);
     max-width: 43.5rem;
 }
@@ -577,4 +578,15 @@ body {
   .product-grid {
     grid-template-columns: 1fr 1fr;
   }
+}
+.subtotal{
+  color: grey;
+}
+.order{
+  justify-content: center;
+  align-items: center;
+}
+.order-image{
+  margin-top: 50%;
+  margin-left: 2%;
 }

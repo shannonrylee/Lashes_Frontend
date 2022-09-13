@@ -16,21 +16,41 @@ useEffect(() => {
 
 
   return product ? (
-    <div className="detail">
-      <div className="detail-header">
-        <div style={{minWidth: '30em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-          <h1>{product.title}</h1>
-        </div> 
-      </div>
-      <div className="info-wrapper">
-        <div style={{display: 'flex', justifyContent: 'space-between'}}>
-          <h1>{product.image}</h1>
-          <h3>{product.description}</h3>
-          <h3>{product.price}</h3>
+    <div className="productdetails">
+      <div className='details-left'>
+        <div className='left-image'>
+        <img src='https://i.imgur.com/UGEB4qW.png'/>
         </div>
-        <p>{product.description}</p>
       </div>
-    </div>
+      <div className='details'>
+        <p className='left-title'>{props.title}</p>
+        <p>{props.price}</p>
+        <p>{props.description}</p>
+        </div>
+        <div className='detail-right'>
+        <div className='right-info'>
+          <p>
+            Price: <span>{props.price}</span>
+          </p>
+          <p>
+            Status: <span> In Stock </span>
+          </p>
+          <p>
+            Qty 
+            <select>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
+              <option value='3'>3</option>
+              <option value='4'>4</option>
+            </select>
+          </p>
+          <p>
+            <button type="button">Add to Cart</button>
+          </p>
+        </div>
+        </div>
+
+        </div>
   ) : null;
 }
 
