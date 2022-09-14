@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Review = () => {
+  let navigate = useNavigate()
   const [review, setReview] = useState([]);
   const initialState = {
     title: "",
@@ -40,20 +42,20 @@ const Review = () => {
     setSubmitted(true);
     e.target.reset();
   };
-  const handleUpdate = async () => {
-    let res = await axios.put('http://localhost:3001/api/review${_id}', formState)
-    console.log(res)
+  const handleUpdate = async (_id) => {
+    let res = await axios.put(`http://localhost:3001/api/review${_id}`, formState).then(res => console.log(res.data)).catch((error) => console.log(error))
   }
-//  const handleUpdate = async (_id) = {
-//    let res = await axios.put('http://localhost:3001/api/review/${_id}', formState)
+//  const handleUpdate = async (id) = {
+//    let res = await axios.put('http://localhost:3001/api/review/${id}', formState)
 //    .then((res) => console.log(res.status))
 //    .catch((error) => console.log(error))
 //  }
  const handleDelete = async (_id) => {
-  let res = await axios.delete('http://localhost:3001/api/review${_id}').catch((error) => console.log(error))
+  let res = await axios.delete(`http://localhost:3001/api/review/${_id}`).catch((error) => console.log(error))
   console.log(res.data.reviews)
+  navigate('/review')
  }
-//  const deleteRealTime = async (review)=> {
+//  const handleRealTime = async (review)=> {
 //  let index = review.indexOf(review)
 //  let time = [...review]
 //  time.splice[index,1]
@@ -101,11 +103,11 @@ const Review = () => {
             <h1>{reviews.rating}</h1>
             <h1>{reviews.description}</h1>
             <h1>{reviews.image}</h1>
+          <button className="delete-button" onClick={() => {handleDelete(reviews._id)}}>Delete</button>
+          <button className="update-button" onClick={() => {handleUpdate(reviews._id)}}>Edit</button>
           </div>
         ))}
       </div>
-      <button className="delete-button" onClick={() => {handleDelete(review._id)}}>Delete</button>
-      <button className="update-button" onClick={() => {handleUpdate(review._id)}}>Edit</button>
     </div>
   );
 };
