@@ -9,6 +9,7 @@ import Review from './pages/Review'
 import Signin from './pages/SignIn'
 import Register from './pages/Register'
 import AddToCart from './pages/Cart'
+import UpdateReview from './pages/UpdateReview'
 
 const App = (props) => {
 
