@@ -97,7 +97,7 @@ const Review = () => {
             <h1>{reviews.description}</h1>
             <h1>{reviews.image}</h1>
           <button className="delete-button" onClick={() => {handleDelete(reviews._id)}}>Delete</button>
-          <button className="update-button" onClick={() => {handleUpdate(reviews._id)}}>Edit</button>
+          <button className="update-button" onClick={() => {handleUpdate(reviews._id, reviews.title, reviews.rating, reviews.description, reviews.image) }}>Edit</button>
           </div>
         ))}
       </div>
