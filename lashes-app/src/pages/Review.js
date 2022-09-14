@@ -2,18 +2,21 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+
+
 const Review = () => {
   let navigate = useNavigate()
   const [review, setReview] = useState([]);
   const initialState = {
     title: "",
     rating: "",
-    decription: "",
+    description: "",
     image: "",
   };
   const [formState, setFormState] = useState(initialState);
   const [submitted, setSubmitted] = useState(true);
-
+ 
+  
   useEffect(() => {
     const getReview = async () => {
       try {
@@ -43,24 +46,14 @@ const Review = () => {
     e.target.reset();
   };
   const handleUpdate = async (_id) => {
-    let res = await axios.put(`http://localhost:3001/api/review${_id}`, formState).then(res => console.log(res.data)).catch((error) => console.log(error))
+    let res = await axios.put(`http://localhost:3001/api/review/${_id}`, formState).then(res => console.log(res.data)).catch((error) => console.log(error))
   }
-//  const handleUpdate = async (id) = {
-//    let res = await axios.put('http://localhost:3001/api/review/${id}', formState)
-//    .then((res) => console.log(res.status))
-//    .catch((error) => console.log(error))
-//  }
+
  const handleDelete = async (_id) => {
   let res = await axios.delete(`http://localhost:3001/api/review/${_id}`).catch((error) => console.log(error))
   console.log(res.data.reviews)
   navigate('/review')
  }
-//  const handleRealTime = async (review)=> {
-//  let index = review.indexOf(review)
-//  let time = [...review]
-//  time.splice[index,1]
-//  setReview(review)
-//  }
 
   return (
     <div>
