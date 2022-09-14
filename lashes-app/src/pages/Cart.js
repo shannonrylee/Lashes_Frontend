@@ -1,6 +1,8 @@
 import Order from '../components/Order'
-const AddToCart = (props) => {
 
+const Cart = () => {
+
+      
 return(
     <div className="cart">
     <div className="cart-leftside">
@@ -10,7 +12,6 @@ return(
     <div className="cart-rightside">
     <div className='cart-info'>
      <p className="subtotal">Subtotal (0) items</p>
-     <p>{props.price}</p>
     </div>
     <div>
         <button>Proceed to Checkout</button>
@@ -18,4 +19,4 @@ return(
     </div>
     </div>
 )}
-export default AddToCart;
+export default Cart;

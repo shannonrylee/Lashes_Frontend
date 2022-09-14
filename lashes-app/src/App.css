@@ -579,7 +579,7 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 }
-.subtotal{
+.subtotal, .cart-price{
   color: grey;
 }
 .order{

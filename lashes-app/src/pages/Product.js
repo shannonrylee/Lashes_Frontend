@@ -23,6 +23,7 @@ const ViewProducts = () => {
           title={products.title}
           description={products.description}
           price={products.price}
+          key={products.id}
         />
       ))}
     </div>
