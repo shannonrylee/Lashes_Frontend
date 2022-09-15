@@ -130,7 +130,7 @@ const Review = () => {
                       method: 'put',
                       url: `http://localhost:3001/api/review/${reviews._id}`,
                       data: {
-                        title: edit.name,
+                        title: edit.title,
                         rating: edit.image,
                         description: edit.description,
                         image: edit.image
